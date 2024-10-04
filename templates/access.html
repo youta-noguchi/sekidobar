@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>アクセス</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ここにサイト説明を入れます">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div id="container">
+
+<header>
+<h1 id="logo"><a href="index.html"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="Sample Cafe"></a></h1>
+</header>
+
+<main>
+
+<section>
+
+<h2>Access<span>アクセス</span></h2>
+
+<table class="ta1">
+<tr>
+<th>店名</th>
+<td>Sekido Bar</td>
+</tr>
+<tr>
+<th>所在地</th>
+<td>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1313.9335934862636!2d135.49114674654703!3d34.72575697899991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e432308a63ad%3A0x5211f4020c0e9390!2z44CSNTMyLTAwMTIg5aSn6Ziq5bqc5aSn6Ziq5biC5reA5bed5Yy65pyo5bed5p2x77yT5LiB55uu77yX4oiS77yR77yU!5e0!3m2!1sja!2sjp!4v1727933627284!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</td>
+</tr>
+<tr>
+<th>電話番号</th>
+<td>012-3456-7890</td>
+</tr>
+<tr>
+<th>最寄駅</th>
+<td>Osaka Metro 西中島南方駅 徒歩5分</td>
+</tr>
+</table>
+
+</section>
+
+</main>
+
+<footer>
+<ul class="icon">
+<li><a href="#"><img src="{{ url_for('static', filename='images/icon_facebook.png') }}" alt="Facebook"></a></li>
+<li><a href="#"><img src="{{ url_for('static', filename='images/icon_twitter.png') }}"></a></li>
+<li><a href="#"><img src="{{ url_for('static', filename='images/icon_instagram.png') }}" alt="Instagram"></a></li>
+<li><a href="#"><img src="{{ url_for('static', filename='images/icon_youtube.png') }}" alt="YouTube"></a></li>
+<li><a href="#"><img src="{{ url_for('static', filename='images/icon_line.png') }}" alt="LINE"></a></li>
+</ul>
+<small>Copyright&copy; <a href="/index">Sample Cafe</a> All Rights Reserved.</small>
+<span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+</footer>
+
+</div>
+<!--/#container-->
+
+<!--メインメニュー-->
+<nav id="menubar">
+<ul>
+<li><a href="/index">Home<span>ホーム</span></a></li>
+<li><a href="/about">About<span>お店について</span></a></li>
+<li><a href="/menu">Menu<span>メニューのご紹介</span></a></li>
+<li><a href="/access">Access<span>アクセス</span></a></li>
+</ul>
+</nav>
+
+<!--jQueryファイルの読み込み-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!--パララックス（inview）-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/protonet-jquery.inview/1.1.2/jquery.inview.min.js"></script>
+<script src="{{ url_for('static', filename='js/jquery.inview_set.js') }}"></script>
+
+<!--メニュー開閉用のスクリプト-->
+<div id="menubar_hdr"></div>
+<script src="{{ url_for('static', filename='js/openclose_tp.js') }}"></script>
+
+<!--ページの上部へ戻るボタン-->
+<p class="pagetop"><a href="#">↑</a></p>
+</body>
+</html>
