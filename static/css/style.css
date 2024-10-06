@@ -524,7 +524,30 @@ ul.icon img:hover {
 .look {display: inline-block;border: 1px solid #ccc;padding: 5px 20px;background: rgba(0,0,0,0.03);border-radius: 5px;margin: 5px 0;}
 .ofx {overflow-x: hidden;}
 
+/* 手動追加 */
+/* お問い合わせ */
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
 
+button {
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
 
 /*---------------------------------------------------------------------------
 ここから下は画面幅800px以上の追加指定

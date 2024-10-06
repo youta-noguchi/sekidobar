@@ -9,21 +9,36 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+# トップページ遷移時の処理
 @app.route("/index")
 def home():
-    return render_template('index.html')
+    title = "Sekido Bar"
+    body = "home"
+    return render_template('index.html', title = title, body = body)
 
+# お店について遷移時の処理
 @app.route("/about")
 def about():
-    return render_template('about.html')
+    title = 'お店について'
+    return render_template('about.html', title = title)
 
+# アクセス遷移時の処理
 @app.route("/access")
 def access():
-    return render_template('access.html')
+    title = 'アクセス'
+    return render_template('access.html', title = title)
 
+# メニュー遷移時の処理
 @app.route("/menu")
 def menu():
-    return render_template('menu.html')
+    title = 'メニュー'
+    return render_template('menu.html', title = title)
+
+# お問い合わせ遷移時の処理
+@app.route("/contact")
+def contact():
+    title = 'お問い合わせ'
+    return render_template('contact.html', title = title)
 
 #####テスト#####
 

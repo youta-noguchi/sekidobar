@@ -1,0 +1,51 @@
+{% extends "common.html" %}
+
+{% block content %}
+<div id="container">
+
+<header>
+<h1 id="logo"><a href="/index"><img src="static/images/logo.png" alt="Sample Cafe"></a></h1>
+</header>
+
+<main>
+
+<section>
+
+<h2>Contact<span>お問い合わせ</span></h2>
+
+<form action="/sampleform-post" method="POST">
+<table class="ta1">
+<tr>
+<th>お名前</th>
+    <td>
+        <input name="data1"></input>
+    </td>
+</tr>
+<tr>
+<th>ふりがな</th>
+    <td>
+        <input name="data2"></input>
+    </td>
+</tr>
+<tr>
+<th>メールアドレス</th>
+    <td>
+        <input name="data3"></input>
+    </td>
+</tr>
+<tr>
+<th>お問い合わせ内容</th>
+    <td>
+        <textarea id="message" name="data3" rows="5"></textarea>
+    </td>
+</tr>
+</table>
+    <div align="center">
+        <button type="submit">送信</button>
+    </div>
+</form>
+
+</section>
+
+</main>
+{% endblock %}
