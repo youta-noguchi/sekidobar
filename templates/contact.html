@@ -10,40 +10,48 @@
 <main>
 
 <section>
-
-<h2>Contact<span>お問い合わせ</span></h2>
-
-<form action="/sampleform-post" method="POST">
-<table class="ta1">
-<tr>
-<th>お名前</th>
-    <td>
-        <input name="data1"></input>
-    </td>
-</tr>
-<tr>
-<th>ふりがな</th>
-    <td>
-        <input name="data2"></input>
-    </td>
-</tr>
-<tr>
-<th>メールアドレス</th>
-    <td>
-        <input name="data3"></input>
-    </td>
-</tr>
-<tr>
-<th>お問い合わせ内容</th>
-    <td>
-        <textarea id="message" name="data3" rows="5"></textarea>
-    </td>
-</tr>
-</table>
+{% if title == 'お問い合わせ' %}
+    <h2>Contact<span>お問い合わせ</span></h2>
+    
+    <form action="/contact" method="POST">
+    <table class="ta1">
+    <tr>
+    <th>お名前</th>
+        <td>
+            <input name="data1"></input>
+        </td>
+    </tr>
+    <tr>
+    <th>ふりがな</th>
+        <td>
+            <input name="data2"></input>
+        </td>
+    </tr>
+    <tr>
+    <th>メールアドレス</th>
+        <td>
+            <input name="data3"></input>
+        </td>
+    </tr>
+    <tr>
+    <th>お問い合わせ内容</th>
+        <td>
+            <textarea id="message" name="data4" rows="5"></textarea>
+        </td>
+    </tr>
+    </table>
+        <div align="center">
+            <button type="submit">送信</button>
+        </div>
+    </form>
+{% else %}
+    <h2>Contact<span>お問い合わせが完了しました。</span></h2>
     <div align="center">
-        <button type="submit">送信</button>
+        <a href="/contact">
+            <button type="submit">戻る</button>
+        </a>
     </div>
-</form>
+{% endif %}
 
 </section>
 
