@@ -7,17 +7,18 @@ Created on Thu Oct  3 10:21:35 2024
 
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
+# import pdb
 
 app = Flask(__name__)
 
 #メール設定
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587                             # TLSは587、SSLなら465
-app.config['MAIL_USERNAME'] = 'shimaoosei@gmail.com'
-app.config['MAIL_PASSWORD'] = 'xbzbotcdcvqosxpu'        # GmailのApp用のmパスワード設定をしておく必要あり
+app.config['MAIL_USERNAME'] = 'yekoutesutoyong759@gmail.com'
+app.config['MAIL_PASSWORD'] = 'hoddmrgroedcndfm'        # GmailのApp用のmパスワード設定をしておく必要あり
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_DEFAULT_SENDER'] = 'shimaoosei@gmail.com'    # これがあるとsender設定が不要になる
+app.config['MAIL_DEFAULT_SENDER'] = 'yekoutesutoyong759@gmail.com'    # これがあるとsender設定が不要になる
 mail = Mail(app)
 
 # トップページ遷移時の処理
@@ -54,19 +55,25 @@ def contact():
 # お問い合わせ送信時の処理
 @app.route("/contact", methods=['POST'] )
 def send_email():
-    title = 'お問い合わせ完了'
 
 #   Form内容受取
-    username    = request.form['data1']
-    hurigana    = request.form['data2']
-    email       = request.form['data3']
-    description = request.form['data4']
+    username    = request.form['data1'].strip()
+    hurigana    = request.form['data2'].strip()
+    email       = request.form['data3'].strip()
+    description = request.form['data4'].strip()
 
-#   メール作成
-    msg = Message('お問い合わせ', recipients=['noguchi@ust-solution.co.jp'])
-    msg.body = f"お名前：{username}\nふりがな：{hurigana}\nメールアドレス：{email}\n問い合わせ内容：\n{description}"
-    mail.send(msg)
+#   入力値チェック
+    if username == '' or hurigana == '' or email == '' or description == '':
+        errflg = 'X'
+        title = 'お問い合わせ'
+        return render_template('contact.html', title = title, errflg = errflg)
+    else:
+#       メール作成
+        msg = Message('SekidoBarホームページ　お問い合わせ', recipients=['noguchi@ust-solution.co.jp'])
+        msg.body = f"お名前：{username}\nふりがな：{hurigana}\nメールアドレス：{email}\n問い合わせ内容：\n{description}"
+        mail.send(msg)
     
+    title = 'お問い合わせ完了'
     return render_template('contact.html', title = title)
 
 if __name__ == "__main__":

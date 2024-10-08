@@ -4,7 +4,7 @@
 <div id="container">
 
 <header>
-<h1 id="logo"><a href="/index"><img src="static/images/logo.png" alt="Sample Cafe"></a></h1>
+<h1 id="logo"><a href="/index"><img src="static/images/logo2.png" alt="Sample Cafe"></a></h1>
 </header>
 
 <main>
@@ -40,9 +40,12 @@
         </td>
     </tr>
     </table>
-        <div align="center">
-            <button type="submit">送信</button>
-        </div>
+{% if errflg == 'X' %}
+    <h3 style="color:red">※全項目入力してください。</h3>
+{% endif %}
+    <div align="center">
+        <button type="submit">送信</button>
+    </div>
     </form>
 {% else %}
     <h2>Contact<span>お問い合わせが完了しました。</span></h2>
